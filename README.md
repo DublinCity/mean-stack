@@ -2,7 +2,7 @@
 
 We will make a HR-app using 
 
-### M(ongodb)### E(xpress) ### A(ngular) ### N(ode) 
+### M(ongodb)E(xpress)A(ngular)N(ode) 
 ## Stack!
 
 ```markdown
