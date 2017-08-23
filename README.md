@@ -2,7 +2,7 @@
 
 We will make a HR-app using 
 
-### M(ongodb)
+## M(ongodb)
 ### E(xpress)
 ### A(ngular)
 ### N(ode) 
