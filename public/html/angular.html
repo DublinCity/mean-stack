@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app='app'>
+	<div ng-controller='main'>
+		<input type="text" ng-model="firstName">
+		<input type="text" ng-model="lastName">
+
+		<table>
+			<tr ng-repeat="p in employees">
+				<td>{{p.id}}</td>
+				<!-- <td><span>{{p.name.first}} {{p.name.last}}</span></td> -->
+				<td><button ng-click="remove(p)">remove</button></td>
+			</tr>
+		</table>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script>
+		const app = angular.module('app',[])
+
+		app.controller('main',['$scope', '$http', function($scope, $http){
+			$scope.employees = []
+			$scope.firstName = $scope.lastName =''
+			$http.get('/employees').success(function(data){
+				$scope.employees = data
+			})
+			
+			$scope.app = function(){
+
+			}
+
+			$scope.remove = function(employee){
+				console.log(employee.id)
+				$http.delete('/employees/'+employee.id).success(function(data){
+					$scope.employees = data
+					console.log(data)
+				})
+			}
+		}])
+
+	</script>
+</body>
+</html>

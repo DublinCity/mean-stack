@@ -10,6 +10,8 @@ var employees = require('./routes/employees');
 
 var app = express();
 
+require('./connection.js')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

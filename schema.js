@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const EmployeeSchema = new Schema({
-  id: String,
+  id: Number,
   name: {
     first: String,
     last: String
@@ -13,6 +13,4 @@ const EmployeeSchema = new Schema({
   }
 })
 
-module.exports = {
-  'EmployeeSchema': EmployeeSchema
-}
+module.exports = mongoose.model('Employee',EmployeeSchema)
