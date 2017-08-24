@@ -13,7 +13,6 @@ exports.sendJson = function(data, res) {
 }
 
 exports.send404 = function(err, res) {
-  console.log(err)
   res.writeHead(404, {
     'contentType': 'text/plain'
   })
